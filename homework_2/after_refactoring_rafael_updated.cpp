@@ -2,17 +2,17 @@
 
 const int arraySize = 10;
 
-void inputArray(long long array[], const int size);
-bool isIncreasingSequence(const long long array[], const int size);
+void inputArray(int array[], const int size);
+bool doesTheSequenceIncrease(const int array[], const int size);
 
 int main() 
 {
     
-    long long array[arraySize];
+    int array[arraySize];
 
     inputArray(array, arraySize);
 
-    bool result = isIncreasingSequence(array, arraySize);
+    bool result = doesTheSequenceIncrease(array, arraySize);
 
     if (result) 
     {
@@ -27,7 +27,7 @@ int main()
 }
 
 
-void inputArray(long long array[], int size)
+void inputArray(int array[], const int size)
 {
     for (int i = 0; i < size; i++) 
     {
@@ -36,7 +36,7 @@ void inputArray(long long array[], int size)
     }
 }
 
-bool isIncreasingSequence(const long long array[], int size) 
+bool doesTheSequenceIncrease(const int array[], const int size) 
 {
     for (int i = 0; i < size - 1; i++) 
     {
