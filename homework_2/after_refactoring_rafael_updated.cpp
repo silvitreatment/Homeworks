@@ -1,53 +1,36 @@
 #include <iostream>
 
-const int arraySize = 10;
+bool doesTheSequenceIncrease(const int* const arr, const int size);
+void inputArray(int* const arr, const int size);
 
-void inputArray(int array[], const int size);
-bool doesTheSequenceIncrease(const int array[], const int size);
+int main() {
+    const int arrSize = 10;
+    int arr[arrSize];
+    inputArray(arr, arrSize);
 
-int main() 
-{
-    
-    int array[arraySize];
+    bool isIncreasing = doesTheSequenceIncrease(arr, arrSize);
 
-    inputArray(array, arraySize);
-
-    bool result = doesTheSequenceIncrease(array, arraySize);
-
-    if (result) 
-    {
+    if (isIncreasing) {
         std::cout << "Последовательность возрастает" << std::endl;
-    } 
-    else 
-    {
+    } else {
         std::cout << "Последовательность убывает" << std::endl;
     }
 
     return 0;
 }
 
-
-void inputArray(int array[], const int size)
-{
-    for (int i = 0; i < size; i++) 
-    {
-        std::cout << "Введите " << i + 1 << " элемент, принадлежащий множеству целых чисел: ";
-        std::cin >> array[i];
-    }
-}
-
-bool doesTheSequenceIncrease(const int array[], const int size) 
-{
-    for (int i = 0; i < size - 1; i++) 
-    {
-        if (array[i] > array[i + 1]) 
-        {
+bool doesTheSequenceIncrease(const int* const arr, const int size) {
+    for (int i = 0; i < size - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
             return false;
         }
     }
     return true;
 }
 
-
-
-
+void inputArray(int* const arr, const int size) {
+    for (int i = 0; i < size; i++) {
+        std::cout << "Введите " << i + 1 << " элемент, принадлежащий множеству целых чисел: ";
+        std::cin >> arr[i];
+    }
+}
