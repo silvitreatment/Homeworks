@@ -19,8 +19,9 @@ int main() {
     double ratio = double(maxNum) /  minNum;
 
     std::cout << "Массив: ";
+    const char format = ' ';
     for (int num : arr) {
-        std::cout << num << " ";
+        std::cout << num << format;
     }
     std::cout << std::endl;
     std::cout << "Максимальное значение: " << maxNum << std::endl;
